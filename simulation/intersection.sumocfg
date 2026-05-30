@@ -1,0 +1,14 @@
+<configuration>
+    <input>
+        <net-file value="intersection.net.xml"/>
+        <route-files value="intersection.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+    <report>
+        <no-step-log value="true"/>
+        <waiting-time-memory value="1000"/>
+    </report>
+</configuration>

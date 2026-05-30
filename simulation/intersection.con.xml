@@ -1,0 +1,21 @@
+<connections>
+    <!-- North Incoming -->
+    <connection from="N2J0" to="J02W" fromLane="0" toLane="0"/>
+    <connection from="N2J0" to="J02S" fromLane="0" toLane="0"/>
+    <connection from="N2J0" to="J02E" fromLane="1" toLane="1"/>
+
+    <!-- South Incoming -->
+    <connection from="S2J0" to="J02E" fromLane="0" toLane="0"/>
+    <connection from="S2J0" to="J02N" fromLane="0" toLane="0"/>
+    <connection from="S2J0" to="J02W" fromLane="1" toLane="1"/>
+
+    <!-- East Incoming -->
+    <connection from="E2J0" to="J02N" fromLane="0" toLane="0"/>
+    <connection from="E2J0" to="J02W" fromLane="0" toLane="0"/>
+    <connection from="E2J0" to="J02S" fromLane="1" toLane="1"/>
+
+    <!-- West Incoming -->
+    <connection from="W2J0" to="J02S" fromLane="0" toLane="0"/>
+    <connection from="W2J0" to="J02E" fromLane="0" toLane="0"/>
+    <connection from="W2J0" to="J02N" fromLane="1" toLane="1"/>
+</connections>

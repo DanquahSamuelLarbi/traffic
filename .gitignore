@@ -1,0 +1,29 @@
+# Large binary / media files (too large for GitHub)
+*.mp4
+*.avi
+*.mkv
+
+# YOLOv8 model weights (download separately via ultralytics)
+*.pt
+*.onnx
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE / OS files
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/

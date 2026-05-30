@@ -1,0 +1,63 @@
+<routes>
+    <!-- Vehicle Types -->
+    <vType id="car" length="5.0" maxSpeed="13.89" accel="2.6" decel="4.5" sigma="0.5" guiShape="passenger"/>
+    <vType id="bus" length="12.0" maxSpeed="11.11" accel="1.2" decel="3.5" sigma="0.5" guiShape="bus"/>
+    <vType id="truck" length="10.0" maxSpeed="11.11" accel="1.5" decel="4.0" sigma="0.5" guiShape="truck"/>
+    <vType id="motorcycle" length="2.0" maxSpeed="16.67" accel="4.0" decel="5.0" sigma="0.5" guiShape="motorcycle"/>
+
+    <!-- Routes -->
+    <!-- North incoming -->
+    <route id="r_N2S" edges="N2J0 J02S"/>
+    <route id="r_N2W" edges="N2J0 J02W"/>
+    <route id="r_N2E" edges="N2J0 J02E"/>
+
+    <!-- South incoming -->
+    <route id="r_S2N" edges="S2J0 J02N"/>
+    <route id="r_S2W" edges="S2J0 J02W"/>
+    <route id="r_S2E" edges="S2J0 J02E"/>
+
+    <!-- East incoming -->
+    <route id="r_E2W" edges="E2J0 J02W"/>
+    <route id="r_E2N" edges="E2J0 J02N"/>
+    <route id="r_E2S" edges="E2J0 J02S"/>
+
+    <!-- West incoming -->
+    <route id="r_W2E" edges="W2J0 J02E"/>
+    <route id="r_W2N" edges="W2J0 J02N"/>
+    <route id="r_W2S" edges="W2J0 J02S"/>
+
+    <!-- Phase 1: Low Density (0s to 300s) -->
+    <!-- North-South -->
+    <flow id="low_N2S" type="car" route="r_N2S" begin="0" end="300" vehsPerHour="150" departLane="best"/>
+    <flow id="low_S2N" type="car" route="r_S2N" begin="0" end="300" vehsPerHour="150" departLane="best"/>
+    <flow id="low_N2W" type="motorcycle" route="r_N2W" begin="0" end="300" vehsPerHour="50" departLane="best"/>
+    <flow id="low_S2E" type="bus" route="r_S2E" begin="0" end="300" vehsPerHour="20" departLane="best"/>
+
+    <!-- East-West -->
+    <flow id="low_E2W" type="car" route="r_E2W" begin="0" end="300" vehsPerHour="120" departLane="best"/>
+    <flow id="low_W2E" type="car" route="r_W2E" begin="0" end="300" vehsPerHour="120" departLane="best"/>
+    <flow id="low_E2S" type="truck" route="r_E2S" begin="0" end="300" vehsPerHour="20" departLane="best"/>
+
+    <!-- Phase 2: Peak Unbalanced Density (300s to 700s) -->
+    <!-- North-South is EXTREMELY HEAVY -->
+    <flow id="peak_N2S_car" type="car" route="r_N2S" begin="300" end="700" vehsPerHour="900" departLane="best"/>
+    <flow id="peak_S2N_car" type="car" route="r_S2N" begin="300" end="700" vehsPerHour="900" departLane="best"/>
+    <flow id="peak_N2E_bus" type="bus" route="r_N2E" begin="300" end="700" vehsPerHour="80" departLane="best"/>
+    <flow id="peak_S2W_truck" type="truck" route="r_S2W" begin="300" end="700" vehsPerHour="80" departLane="best"/>
+    <flow id="peak_N2W_moto" type="motorcycle" route="r_N2W" begin="300" end="700" vehsPerHour="100" departLane="best"/>
+
+    <!-- East-West remains LIGHT -->
+    <flow id="peak_E2W" type="car" route="r_E2W" begin="300" end="700" vehsPerHour="150" departLane="best"/>
+    <flow id="peak_W2E" type="car" route="r_W2E" begin="300" end="700" vehsPerHour="150" departLane="best"/>
+
+    <!-- Phase 3: Medium Balanced Density (700s to 1000s) -->
+    <!-- North-South -->
+    <flow id="med_N2S" type="car" route="r_N2S" begin="700" end="1000" vehsPerHour="400" departLane="best"/>
+    <flow id="med_S2N" type="car" route="r_S2N" begin="700" end="1000" vehsPerHour="400" departLane="best"/>
+    <flow id="med_N2E" type="truck" route="r_N2E" begin="700" end="1000" vehsPerHour="50" departLane="best"/>
+
+    <!-- East-West -->
+    <flow id="med_E2W" type="car" route="r_E2W" begin="700" end="1000" vehsPerHour="400" departLane="best"/>
+    <flow id="med_W2E" type="car" route="r_W2E" begin="700" end="1000" vehsPerHour="400" departLane="best"/>
+    <flow id="med_W2N" type="bus" route="r_W2N" begin="700" end="1000" vehsPerHour="30" departLane="best"/>
+</routes>
